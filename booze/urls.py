@@ -6,4 +6,5 @@ from booze import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('booze/', views.booze_list),
+    path('booze/<int:pk>', views.booze_detail),
 ]
