@@ -6,7 +6,7 @@ from rest_framework import status
 from rest_framework.response import Response
 
 @api_view(http_method_names=['GET', 'POST'])
-def booze_list(request):
+def booze_list(request, format=None):
   if request.method == "GET":
     # get all booze
     booze = Booze.objects.all()
@@ -22,7 +22,7 @@ def booze_list(request):
     
 
 @api_view(http_method_names=['GET', 'PUT', 'DELETE'])
-def booze_detail(request, pk):   
+def booze_detail(request, pk, format=None):   
   try: 
     booze = Booze.objects.get(pk=pk)
   except Booze.DoesNotExist:
